@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-identical-title */
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -22,6 +23,7 @@ describe('Gallery is rendering', () => {
 
   it('renders', () => {
     const { getByTestId } = render(<Gallery currentCategory={portrait} />);
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(getByTestId('h1tag')).toHaveTextContent('Portraits');
   });
 });
